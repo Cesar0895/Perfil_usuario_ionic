@@ -1,14 +1,46 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      {{data.nombre}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card>
+    <ion-card-header>
+      {{data.nombre}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img src="../../assets/imgs/user_icon.png"></ion-img>
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="data.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="data.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Telefono</ion-label>
+        <ion-input type="number" [(ngModel)]="data.telefono"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Comentario</ion-label>
+        <ion-input type="text" [(ngModel)]="data.comentario"></ion-input>
+      </ion-item>
+      <br>
+      <ion-list>
+        <ion-item>
+          <ion-label>Acepto terminos y condiciones</ion-label>
+          <ion-toggle></ion-toggle>
+        </ion-item>
+      </ion-list>
+
+      <br>
+      <div>
+        <button ion-button color="dark" (click)="Ingresar()">ingresar</button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
